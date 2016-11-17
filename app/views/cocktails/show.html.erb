@@ -1,13 +1,15 @@
 <h1><%= @cocktail.name.capitalize %></h1>
+<div>
+  <ul>
+    <% @doses.each do |dose| %>
+      <li>
+         <%= dose.description %> of <%= dose.ingredient.name %> - <%= link_to "x", cocktail_dose_path(@cocktail, dose), method: :delete, class:"btn btn-danger" %></li>
+    <% end %>
+    <li>  <%= link_to "Add an Ingredient", new_cocktail_dose_path(@cocktail) %> <%= link_to "+", new_cocktail_path, class:"btn btn-success" %> </li>
+  </ul>
+</div>
 
-<ul>
-  <% @doses.each do |dose| %>
-    <li>
-       <%= dose.description %> of <%= dose.ingredient.name %> - <%= link_to "Delete ingredient", cocktail_dose_path(@cocktail, dose), method: :delete %></li>
-  <% end %>
-</ul>
-
-<%= link_to "Add a Cocktail", new_cocktail_path %> </br>
-<%= link_to "Add an Ingredient", new_cocktail_dose_path(@cocktail) %> </br>
-<%= link_to "Back to Menu", cocktails_path %>
-
+<div class="text-center">
+  <%= link_to "Add a Cocktail +", new_cocktail_path, class:"btn btn-success" %>  OR
+  <%= link_to "Back to Menu", cocktails_path, class:"btn btn-success" %>
+</div>

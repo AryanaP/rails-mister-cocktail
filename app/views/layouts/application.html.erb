@@ -11,6 +11,43 @@
   </head>
 
   <body>
+    <div class="navbar-wagon">
+    <!-- Logo -->
+    <a href="/" class="navbar-wagon-brand">
+      <%= image_tag "cocktail" %>
+    </a>
+
+    <!-- Right Navigation -->
+    <div class="navbar-wagon-right hidden-xs hidden-sm">
+
+      <!-- Search form -->
+      <form action="" class="navbar-wagon-search">
+        <input type="text" class="navbar-wagon-search-input" placeholder="You know the name...?">
+        <button type="submit" class="navbar-wagon-search-btn">
+          <i class="fa fa-search"></i>
+        </button>
+      </form>
+
+
+      <!-- Notification link-->
+      <a href="" class="navbar-wagon-item navbar-wagon-link">
+        <div class="badge-container">
+          <i class="fa fa-heart"></i>
+        </div>
+      </a>
+
+      <!-- Button (call-to-action) -->
+      <a href="" class="navbar-wagon-item navbar-wagon-button btn">My cocktails</a>
+    </div>
+
+      <!-- Text link -->
+      <a href="" class="navbar-wagon-item navbar-wagon-link">Contact</a>
+
+    <!-- Dropdown appearing on mobile only -->
+    </div>
+
+    <div class = "content">
     <%= yield %>
+    </div>
   </body>
 </html>
