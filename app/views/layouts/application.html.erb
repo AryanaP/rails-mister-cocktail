@@ -11,43 +11,21 @@
   </head>
 
   <body>
-    <div class="navbar-wagon">
-    <!-- Logo -->
-    <a href="/" class="navbar-wagon-brand">
-      <%= image_tag "cocktail" %>
-    </a>
-
-    <!-- Right Navigation -->
-    <div class="navbar-wagon-right hidden-xs hidden-sm">
-
-      <!-- Search form -->
-      <form action="" class="navbar-wagon-search">
-        <input type="text" class="navbar-wagon-search-input" placeholder="You know the name...?">
-        <button type="submit" class="navbar-wagon-search-btn">
-          <i class="fa fa-search"></i>
-        </button>
-      </form>
+  <!-- NAVBAR  -->
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path('cocktail-banner.jpg') %>');">
 
 
-      <!-- Notification link-->
-      <a href="" class="navbar-wagon-item navbar-wagon-link">
-        <div class="badge-container">
-          <i class="fa fa-heart"></i>
-        </div>
-      </a>
-
-      <!-- Button (call-to-action) -->
-      <a href="" class="navbar-wagon-item navbar-wagon-button btn">My cocktails</a>
+      <div class="banner-content">
+        <h1>Mister Cocktail</h1>
+        <p>The most funky cocktail app ! </p>
+         <%= link_to "Add a Cocktail ", new_cocktail_path, class:"btn btn-primary" %>
+      </div>
     </div>
 
-      <!-- Text link -->
-      <a href="" class="navbar-wagon-item navbar-wagon-link">Contact</a>
-
-    <!-- Dropdown appearing on mobile only -->
-    </div>
-
+    <!-- page content -->
     <div class = "content">
-    <%= yield %>
+      <%= yield %>
     </div>
+
   </body>
 </html>

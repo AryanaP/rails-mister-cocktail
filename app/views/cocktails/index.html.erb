@@ -1,10 +1,30 @@
+
 <h1>Cocktail Menu</h1>
 
 
-<ul>
-  <% @cocktails.each do |cocktail| %>
-    <li> <%= link_to cocktail.name, cocktail_path(cocktail) %> </li>
-    <% end %>
-</ul>
+  <div class="container">
+    <div class="row">
+
+      <% @cocktails.each do |cocktail| %>
+        <div class="col-xs-12 col-sm-4">
+
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path('cocktail.png') %>')">
+
+              <div class="card-category">Rating</div>
+              <div class="card-description">
+               <h2 class="text-center"><%= cocktail.name.capitalize %></h2>
+              <!-- check to capitalize -->
+             </div>
+            <%= link_to cocktail.name, cocktail_path(cocktail), class:"card-link" %>
+          </div>
+        </div>
+
+
+
+     <% end %>
+
+    </div>
+  </div>
+
 
  <%= link_to "Add a Cocktail +", new_cocktail_path, class:"btn btn-success" %>

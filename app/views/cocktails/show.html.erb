@@ -1,4 +1,7 @@
 <h1><%= @cocktail.name.capitalize %></h1>
+
+<%= cl_image_tag @cocktail.photo, height: 200, width: 200 %>
+
 <div>
   <ul>
     <% @doses.each do |dose| %>
@@ -9,7 +12,19 @@
   </ul>
 </div>
 
+  <%= simple_form_for [@cocktail, @dose] do |f| %>
+    <%= f.input :description %>
+    <%= f.association :ingredient %>
+    <%= f.submit %>
+  <% end %>
+
+
+
 <div class="text-center">
   <%= link_to "Add a Cocktail +", new_cocktail_path, class:"btn btn-success" %>  OR
   <%= link_to "Back to Menu", cocktails_path, class:"btn btn-success" %>
 </div>
+
+
+
+

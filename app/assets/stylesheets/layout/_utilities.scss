@@ -31,6 +31,8 @@
 
 li {
   list-style: none;
+  font-size: 30px;
+  margin-left: 40px;
 }
 
 a:hover {
@@ -41,4 +43,13 @@ a:hover {
 a {
   text-decoration: none;
   color: black;
+}
+
+.content {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.content li {
+  text-align: left;
 }
