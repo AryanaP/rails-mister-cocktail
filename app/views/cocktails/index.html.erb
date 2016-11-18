@@ -8,7 +8,11 @@
       <% @cocktails.each do |cocktail| %>
         <div class="col-xs-12 col-sm-4">
 
-            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path('cocktail.png') %>')">
+          <%if cocktail.photo? %>
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path cocktail.photo %>')">
+          <% else %>
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url('<%= image_path('cocktail.png') %>')">
+          <% end %>
 
               <div class="card-category">Rating</div>
               <div class="card-description">

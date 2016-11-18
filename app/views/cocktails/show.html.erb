@@ -1,30 +1,31 @@
 <h1><%= @cocktail.name.capitalize %></h1>
 
+
 <%= cl_image_tag @cocktail.photo, height: 200, width: 200 %>
 
-<div>
-  <ul>
-    <% @doses.each do |dose| %>
-      <li>
-         <%= dose.description %> of <%= dose.ingredient.name %> - <%= link_to "x", cocktail_dose_path(@cocktail, dose), method: :delete, class:"btn btn-danger" %></li>
-    <% end %>
-    <li>  <%= link_to "Add an Ingredient", new_cocktail_dose_path(@cocktail) %> <%= link_to "+", new_cocktail_path, class:"btn btn-success" %> </li>
-  </ul>
-</div>
+<div class="container">
+  <div class="row">
 
-  <%= simple_form_for [@cocktail, @dose] do |f| %>
-    <%= f.input :description %>
-    <%= f.association :ingredient %>
-    <%= f.submit %>
-  <% end %>
+    <div class="col-xs-12 col-sm-6">
+      <div class="list-ing">
+      <h2>My ingredients</h2>
+          <% @doses.each do |dose| %>
+            <p>
+                <%= link_to "x", cocktail_dose_path(@cocktail, dose), method: :delete, class:"btn btn-danger" %> - <%= dose.description %> of <%= dose.ingredient.name %></p>
+          <% end %>
+      </div>
+    </div>
 
-
-
-<div class="text-center">
-  <%= link_to "Add a Cocktail +", new_cocktail_path, class:"btn btn-success" %>  OR
-  <%= link_to "Back to Menu", cocktails_path, class:"btn btn-success" %>
-</div>
-
+    <div class="col-xs-12 col-sm-6">
+      <div>
+      <h2>Add an ingredient</h2>
+        <%= simple_form_for [@cocktail, @dose] do |f| %>
+          <%= f.input :description, label: "Quantity" %>
+          <%= f.association :ingredient %>
+          <%= f.submit class:"btn btn-success" %>
+        <% end %>
+      </div>
+    </div>
 
 
 

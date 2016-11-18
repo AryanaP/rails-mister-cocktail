@@ -12,13 +12,13 @@
 
   <body>
   <!-- NAVBAR  -->
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path('cocktail-banner.jpg') %>');">
-
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path('new_banner_oacstg.jpg') %>');">
 
       <div class="banner-content">
-        <h1>Mister Cocktail</h1>
+        <h1 >Mister Cocktail</h1>
         <p>The most funky cocktail app ! </p>
-         <%= link_to "Add a Cocktail ", new_cocktail_path, class:"btn btn-primary" %>
+         <%= link_to "Add a Cocktail ", new_cocktail_path, class:"btn btn-primary" %> </br>
+        <%= link_to "Back to menu", cocktails_path, class: "btn btn-primary" %>
       </div>
     </div>
 
